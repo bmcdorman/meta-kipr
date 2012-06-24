@@ -101,5 +101,5 @@ IMAGE_INSTALL += " \
 	kernel-module-zc0301 \
 	kernel-module-zr364xx \
 "
-export IMAGE_BASENAME = "hw-bringup"
+export IMAGE_BASENAME = "distribution"
 
