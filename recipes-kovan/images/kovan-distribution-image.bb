@@ -100,7 +100,7 @@ IMAGE_INSTALL += " \
 	kernel-module-wm8775 \
 	kernel-module-zc0301 \
 	kernel-module-zr364xx \
-	qt4-embedded
+	task-qt4e-base
 "
 export IMAGE_BASENAME = "distribution"
 
