@@ -101,6 +101,7 @@ IMAGE_INSTALL += " \
 	kernel-module-zc0301 \
 	kernel-module-zr364xx \
 	task-qt4e \
+	tslib-calibrate \
 "
 export IMAGE_BASENAME = "distribution"
 
