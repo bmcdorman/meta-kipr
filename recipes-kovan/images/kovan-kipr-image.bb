@@ -103,7 +103,6 @@ IMAGE_INSTALL += " \
 	task-qt4e \
 	tslib-calibrate \
 	kernel-module-uvcvideo \
-	gst-plugin-ogg \
 	gst-plugin-tcp \
 	gst-plugin-theora \
 	gst-plugins-good-wavenc \
