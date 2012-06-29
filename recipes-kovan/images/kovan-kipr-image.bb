@@ -103,20 +103,8 @@ IMAGE_INSTALL += " \
 	task-qt4e \
 	tslib-calibrate \
 	kernel-module-uvcvideo \
-	gst-plugin-tcp \
-	gst-plugin-theora \
-	gst-plugins-good-wavenc \
-	gst-plugin-video4linux \
-	gst-plugin-videorate \
-	gst-plugin-ximagesink \
-	gst-plugin-xvimagesink \
 	gst-plugins-base \
-	gst-plugins-base-ffmpegcolorspace \
 	gst-plugins-good \
-	gst-plugins-good-avi \
-	gst-plugins-good-jpeg \
-	gst-plugins-good-multipart \
-	gst-plugins-good-video4linux2 \
 	gstreamer \
 	gstreamer-dev \
 	opencv \
