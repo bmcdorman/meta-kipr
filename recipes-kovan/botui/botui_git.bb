@@ -5,11 +5,14 @@ SRC_URI = "git://github.com/kipr/botui.git \
            file://botui.service \
            file://factory.config"
 
+S = "${WORKDIR}/git"
+
 SRCREV = "HEAD"
 LICENSE = "GPL"
+LIC_FILES_CHKSUM = "file://${S}/LICENSE;md5=4fe869ee987a340198fb0d54c55c47f1"
 PR = "r0"
 
-S = "${WORKDIR}/git"
+
 
 EXTRA_OECMAKE = "-DQT_LIBRARY_DIR=${OE_QMAKE_LIBDIR_QT} \
 	-DQT_INSTALL_LIBS=${OE_QMAKE_LIBDIR_QT} \
