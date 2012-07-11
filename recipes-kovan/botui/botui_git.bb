@@ -30,7 +30,7 @@ do_install() {
 	install -m 0755 ${WORKDIR}/factory.config ${D}/var/lib/connman/
 
 	install -d ${D}/usr/sbin
-	install -m 0755 ${S}/botui ${D}/usr/sbin/
+	install -m 0755 ${S}/deploy/botui ${D}/usr/sbin/
 }
 
 FILES_${PN} = "${bindir} ${sbindir}"
