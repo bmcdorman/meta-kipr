@@ -5,6 +5,8 @@ SRC_URI = "git://github.com/kipr/botui.git \
            file://botui.service \
            file://factory.config"
 
+DEPENDS = "kiss-compiler easydevice libtinyarchive"
+
 S = "${WORKDIR}/git"
 
 SRCREV = "HEAD"
