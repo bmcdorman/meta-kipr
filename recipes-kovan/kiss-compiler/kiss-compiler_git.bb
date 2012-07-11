@@ -2,7 +2,7 @@ inherit qt4x11 cmake
 
 SRC_URI = "git://github.com/kipr/kiss-compiler.git"
 
-DEPENDS = "libtinyarchive"
+DEPENDS = "libtinyarchive boost"
 
 S = "${WORKDIR}/git"
 
