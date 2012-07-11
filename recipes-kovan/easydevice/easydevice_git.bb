@@ -1,6 +1,6 @@
 inherit qt4x11 cmake
 
-SRC_URI = "git://github.com/kipr/kiss-compiler.git"
+SRC_URI = "git://github.com/kipr/easydevice.git"
 
 DEPENDS = "kiss-compiler"
 
