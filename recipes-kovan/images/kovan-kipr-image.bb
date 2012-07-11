@@ -18,12 +18,13 @@ IMAGE_INSTALL += " \
 	systemd-analyze \
 	strace gdb lsof bc bash procps kexec \
 	gadget-init \
-	openssh-scp openssh-ssh \
+	openssh-scp openssh-ssh openssh-scp \
 	kovan-util \
 	udev-extra-rules \
 	python-fcntl python-subprocess python-ctypes python-terminal \
-	task-core-sdk \
 	mplayer2 \
+	qt4-x11-free libqtgui4 libqtnetwork4 libicui18n xorg-minimal-fonts qt4-fonts liberation-fonts \
+	qt4-plugin-bearer-connman \
 	${XSERVER} \
 	kernel-module-cs53l32a \
 	kernel-module-cx231xx-alsa \
@@ -100,8 +101,6 @@ IMAGE_INSTALL += " \
 	kernel-module-wm8775 \
 	kernel-module-zc0301 \
 	kernel-module-zr364xx \
-	task-qt4e \
-	tslib-calibrate \
 	kernel-module-uvcvideo \
 	gst-plugins-base \
 	gst-plugins-good \
@@ -110,6 +109,8 @@ IMAGE_INSTALL += " \
 	opencv \
 	opencv-apps \
 	opencv-dev \
+	kernel-module-usbtest \
+	kernel-module-g-zero \
 "
 export IMAGE_BASENAME = "distribution"
 

@@ -1,0 +1,15 @@
+[Unit]
+Description=Robot User Interface
+After=local-fs.target
+Requires=xorg.service
+
+[Service]
+Environment=DISPLAY=:0.0
+ExecStart=/usr/sbin/botui
+#ExecStop=/usr/bin/killall botui
+#ExecStopPost=/usr/bin/killall Xorg
+#RemainAfterExit=no
+#Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
