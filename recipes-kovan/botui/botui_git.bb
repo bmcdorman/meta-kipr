@@ -5,7 +5,7 @@ SRC_URI = "git://github.com/kipr/botui.git \
            file://botui.service \
            file://factory.config"
 
-SRCREV = "92daca803a73185162efa982772fdec38fe623eb"
+SRCREV = "HEAD"
 LICENSE = "GPL"
 PR = "r0"
 
