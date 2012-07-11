@@ -15,7 +15,7 @@ OECMAKE_SOURCEPATH = "${S}"
 
 do_install() {
 	install -d ${D}/lib
-	install -m 0755 ${WORKDIR}/lib/libtinyarchive.a ${D}/lib
+	install -m 0755 ${S}/lib/libtinyarchive.a ${D}/lib
 }
 
 FILES_${PN} += "${libdir}/libtinyarchive.a"

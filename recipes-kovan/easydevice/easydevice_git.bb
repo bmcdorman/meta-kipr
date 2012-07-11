@@ -17,7 +17,7 @@ OECMAKE_SOURCEPATH = "${S}"
 
 do_install() {
 	install -d ${D}/lib
-	install -m 0755 ${WORKDIR}/lib/libeasydevice.a ${D}/lib
+	install -m 0755 ${S}/lib/libeasydevice.a ${D}/lib
 }
 
 FILES_${PN} += "${libdir}/libeasydevice.a"
