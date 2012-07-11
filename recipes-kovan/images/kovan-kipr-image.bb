@@ -25,6 +25,7 @@ IMAGE_INSTALL += " \
 	mplayer2 \
 	qt4-x11-free libqtgui4 libqtnetwork4 libicui18n xorg-minimal-fonts qt4-fonts liberation-fonts \
 	qt4-plugin-bearer-connman \
+	botui \
 	${XSERVER} \
 	kernel-module-cs53l32a \
 	kernel-module-cx231xx-alsa \
