@@ -19,7 +19,7 @@ do_install() {
 	install -d ${D}/lib
 	install -m 0755 ${S}/lib/libeasydevice.a ${D}/lib
 	
-	install -d ${D}/${includedir}
+	install -d ${D}/${includedir}/easydevice
 	install -m 0755 ${S}/include/*.h ${D}/${includedir}/easydevice
 }
 
