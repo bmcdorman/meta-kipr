@@ -18,7 +18,7 @@ do_install() {
 	install -m 0755 ${S}/lib/libtinyarchive.a ${D}/usr/lib
 	
 	install -d ${D}/${includedir}
-	install -m 0755 ${S}/include/*.h ${D}/${includedir}
+	install -m 0755 ${S}/include/ ${D}/${includedir}
 }
 
 FILES_${PN} += "${base_libdir}/libtinyarchive.a"
