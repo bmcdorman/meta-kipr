@@ -1,6 +1,6 @@
 inherit qt4x11 cmake
 
-SRC_URI = "git://github.com/kipr/meta-kipr.git \
+SRC_URI = "git://github.com/kipr/botui.git \
            file://xorg.service \
            file://kovan-factory-test.service \
            file://factory.config"
