@@ -16,8 +16,8 @@ EXTRA_OECMAKE = "--no-warn-unused-cli"
 OECMAKE_SOURCEPATH = "${S}"
 
 do_install() {
-	install -d ${D}/lib
-	install -m 0755 ${S}/lib/libeasydevice.a ${D}/lib
+	install -d ${D}/usr/lib
+	install -m 0755 ${S}/usr/lib/libeasydevice.a ${D}/usr/lib
 	
 	install -d ${D}/${includedir}/easydevice
 	install -m 0755 ${S}/include/*.h ${D}/${includedir}/easydevice
