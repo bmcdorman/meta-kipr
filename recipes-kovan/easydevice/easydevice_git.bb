@@ -18,7 +18,10 @@ OECMAKE_SOURCEPATH = "${S}"
 do_install() {
 	install -d ${D}/lib
 	install -m 0755 ${S}/lib/libeasydevice.a ${D}/lib
+	
+	install -d ${D}/${includedir}
+	install -m 0755 ${S}/include/*.h ${D}/${includedir}/easydevice
 }
 
 FILES_${PN} += "${libdir}/libeasydevice.a"
-
+FILES_${PN} += "${includedir}/easydevice"

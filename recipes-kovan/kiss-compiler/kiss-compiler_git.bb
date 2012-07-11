@@ -18,6 +18,10 @@ OECMAKE_SOURCEPATH = "${S}"
 do_install() {
 	install -d ${D}/lib
 	install -m 0755 ${S}/lib/libkiss-compiler.a ${D}/lib
+	
+	install -d ${D}/${includedir}
+	install -m 0755 ${S}/include/*.h ${D}/${includedir}/kiss-compiler
 }
 
 FILES_${PN} += "${libdir}/libkiss-compiler.a"
+FILES_${PN} += "${includedir}/kiss-compiler"

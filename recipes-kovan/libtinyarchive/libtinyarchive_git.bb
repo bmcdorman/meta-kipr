@@ -14,8 +14,12 @@ EXTRA_OECMAKE = "--no-warn-unused-cli"
 OECMAKE_SOURCEPATH = "${S}"
 
 do_install() {
-	install -d ${D}/lib
-	install -m 0755 ${S}/lib/libtinyarchive.a ${D}/lib
+	install -d ${D}/usr/lib
+	install -m 0755 ${S}/usr/lib/libtinyarchive.a ${D}/usr/lib
+	
+	install -d ${D}/${includedir}
+	install -m 0755 ${S}/include/*.h ${D}/${includedir}
 }
 
-FILES_${PN} += "${libdir}/libtinyarchive.a"
+FILES_${PN} += "${base_libdir}/libtinyarchive.a"
+FILES_${PN} += "${includedir}"
