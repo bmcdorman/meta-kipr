@@ -25,7 +25,7 @@ EXTRA_OECMAKE = "-DQT_LIBRARY_DIR=${OE_QMAKE_LIBDIR_QT} \
 	-DQT_DBUSCPP2XML_EXECUTABLE=/usr/bin/qdbuscpp2xml \
 	-DQT_MKSPECS_DIR=${QMAKESPEC}/../ \
 	"
-OECMAKE_SOURCEPATH = "../botui"
+OECMAKE_SOURCEPATH = "${S}"
 
 do_install() {
 	install -d ${D}/lib/systemd/system
@@ -39,7 +39,7 @@ do_install() {
 	install -m 0755 ${WORKDIR}/factory.config ${D}/var/lib/connman/
 
 	install -d ${D}/usr/sbin
-	install -m 0755 ${S}/kovan-test ${D}/usr/sbin/
+	install -m 0755 ${S}/botui ${D}/usr/sbin/
 }
 
 FILES_${PN} = "${bindir} ${sbindir}"
