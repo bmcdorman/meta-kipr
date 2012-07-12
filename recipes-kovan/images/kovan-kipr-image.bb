@@ -116,6 +116,7 @@ IMAGE_INSTALL += " \
 	kernel-module-usbtest \
 	kernel-module-g-zero \
 	cmake \
+	qconnman \
 "
 export IMAGE_BASENAME = "distribution"
 
