@@ -21,11 +21,14 @@ IMAGE_INSTALL += " \
 	openssh-scp openssh-ssh openssh-scp \
 	kovan-util \
 	udev-extra-rules \
-	python-fcntl python-subprocess python-ctypes python-terminal \
+	python-fcntl python-subprocess python-ctypes python-dbus python-terminal \
 	mplayer2 \
-	qt4-x11-free libqtgui4 libqtnetwork4 libicui18n xorg-minimal-fonts qt4-fonts liberation-fonts \
+	qt4-x11-free libqtgui4 libqtnetwork4 libqtdbus4 libicui18n xorg-minimal-fonts qt4-fonts liberation-fonts \
 	qt4-plugin-bearer-connman \
 	botui \
+	i2c-wrapper easydevice libtinyarchive \
+	gcc \
+	g++ \
 	${XSERVER} \
 	kernel-module-cs53l32a \
 	kernel-module-cx231xx-alsa \
