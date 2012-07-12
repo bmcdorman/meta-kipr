@@ -1,0 +1,17 @@
+[global]
+OfflineMode=false
+
+[WiFi]
+Enable=true
+
+[Bluetooth]
+Enable=false
+
+[Wired]
+Enable=true
+
+[3G]
+Enable=false
+
+[WiMAX]
+Enable=false

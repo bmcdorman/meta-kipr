@@ -9,7 +9,7 @@ ExecStart=/usr/sbin/botui
 #ExecStop=/usr/bin/killall botui
 #ExecStopPost=/usr/bin/killall Xorg
 #RemainAfterExit=no
-#Restart=on-failure
+Restart=on-failure
 
 [Install]
 WantedBy=multi-user.target
