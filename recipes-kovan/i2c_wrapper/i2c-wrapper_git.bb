@@ -9,6 +9,7 @@ PR = "0.1"
 
 
 do_compile() {
+cd ${S}/src
 make
 }
 
@@ -22,3 +23,4 @@ do_install() {
 
 FILES_${PN} += "${base_libdir}/i2c_wrapper.a"
 FILES_${PN} += "${includedir}"
+
