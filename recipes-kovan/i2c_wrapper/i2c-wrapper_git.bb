@@ -15,7 +15,7 @@ make
 
 do_install() {
 	install -d ${D}/usr/lib
-	install -m 0755 ${S}/lib/i2c_wrapper.a ${D}/usr/lib
+	install -m 0755 ${S}/lib/libi2c_wrapper.a ${D}/usr/lib
 	
 	install -d ${D}/${includedir}
 	install -m 0755 ${S}/include/i2c_wrapper.h ${D}/${includedir}
