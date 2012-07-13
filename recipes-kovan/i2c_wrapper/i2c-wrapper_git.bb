@@ -21,6 +21,6 @@ do_install() {
 	install -m 0755 ${S}/include/i2c_wrapper.h ${D}/${includedir}
 }
 
-FILES_${PN} += "${base_libdir}/libi2c_wrapper.a"
+FILES_${PN} += "${libdir}/libi2c_wrapper.a"
 FILES_${PN} += "${includedir}"
 
