@@ -5,6 +5,7 @@ require systemd-image.bb
 IMAGE_INSTALL += " \
 	usbutils \
 	i2c-tools \
+	task-core-sdk \
 	alsa-utils \
 	devmem2 \
 	iw \
