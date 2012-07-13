@@ -27,8 +27,8 @@ do_install() {
 	ln -sf ../botui.service ${D}${base_libdir}/systemd/system/basic.target.wants/
 
 	install -d ${D}/var/lib/connman
-	install -m 0755 ${WORKDIR}/factory.config ${D}/var/lib/connman/
-	install -m 0755 ${WORKDIR}/settings ${D}/var/lib/connman/
+	install -m 0755 ../factory.config ${D}/var/lib/connman/
+	install -m 0755 ../settings ${D}/var/lib/connman/
 
 	install -d ${D}/usr/sbin
 	install -m 0755 ${S}/deploy/botui ${D}/usr/sbin/

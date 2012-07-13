@@ -24,7 +24,7 @@ IMAGE_INSTALL += " \
 	udev-extra-rules \
 	python-fcntl python-subprocess python-ctypes python-dbus python-terminal \
 	mplayer2 \
-	qt4-x11-free libqtgui4 libqtnetwork4 libqtdbus4 libicui18n xorg-minimal-fonts qt4-fonts liberation-fonts \
+	qt4-x11-free libqtgui4 libqtnetwork4 libqtdbus4 libicui18n xorg-minimal-fonts qt4-fonts liberation-fonts \	
 	qt4-plugin-bearer-connman \
 	botui \
 	i2c-wrapper easydevice libtinyarchive \
@@ -116,8 +116,7 @@ IMAGE_INSTALL += " \
 	opencv-dev \
 	kernel-module-usbtest \
 	kernel-module-g-zero \
-	cmake \
-	qconnman \
+	cmake
 "
 export IMAGE_BASENAME = "distribution"
 
