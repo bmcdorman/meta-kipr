@@ -1,6 +1,8 @@
 inherit cmake
 
-SRC_URI = "git://github.com/kipr/kovand.git"
+SRC_URI = "git://github.com/kipr/kovand.git \
+	file://kovand.service \
+"
 
 DEPENDS = "libkovan i2c-wrapper"
 
