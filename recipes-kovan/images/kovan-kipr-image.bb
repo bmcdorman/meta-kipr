@@ -118,7 +118,7 @@ IMAGE_INSTALL += " \
 	opencv-dev \
 	kernel-module-usbtest \
 	kernel-module-g-zero \
-	cmake
+	cmake \
 "
 export IMAGE_BASENAME = "distribution"
 
