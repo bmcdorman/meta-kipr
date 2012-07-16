@@ -1,0 +1,13 @@
+[Unit]
+Description=Kovan i2c Helper
+After=local-fs.target
+
+[Service]
+ExecStart=/usr/sbin/kovand
+#ExecStop=/usr/bin/killall botui
+#ExecStopPost=/usr/bin/killall Xorg
+#RemainAfterExit=no
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
