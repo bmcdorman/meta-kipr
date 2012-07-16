@@ -3,7 +3,7 @@ inherit qt4x11 cmake
 SRC_URI = "git://github.com/kipr/botui.git \
            file://xorg.service \
            file://botui.service \
-           file://factory.config"
+           file://cbcnet.config"
 
 DEPENDS = "kiss-compiler easydevice libtinyarchive"
 
@@ -27,7 +27,7 @@ do_install() {
 	ln -sf ../botui.service ${D}${base_libdir}/systemd/system/basic.target.wants/
 
 	install -d ${D}/var/lib/connman
-	install -m 0755 ../factory.config ${D}/var/lib/connman/
+	install -m 0755 ../cbcnet.config ${D}/var/lib/connman/
 	install -m 0755 ../settings ${D}/var/lib/connman/
 
 	install -d ${D}/usr/sbin
