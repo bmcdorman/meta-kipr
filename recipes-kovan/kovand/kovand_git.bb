@@ -20,7 +20,7 @@ do_install() {
 	install -m 0755 ${WORKDIR}/kovand.service ${D}/lib/systemd/system
 
 	install -d ${D}${base_libdir}/systemd/system/basic.target.wants/
-	ln -sf ../kovand.service ${D}${base_libdir}/systemd/system/basic.target.wants/
+	ln -sf ${WORKDIR}/kovand.service ${D}${base_libdir}/systemd/system/basic.target.wants/
 
 	install -d ${D}/usr/sbin
 	install -m 0755 ${S}/deploy/kovand ${D}/usr/sbin/
