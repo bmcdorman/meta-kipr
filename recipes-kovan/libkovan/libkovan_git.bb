@@ -19,7 +19,7 @@ do_install() {
 	install -d ${D}/usr/lib
 	install -m 0755 ${S}/lib/libkovan.so ${D}/usr/lib
 	
-	install -d ${D}/${includedir}/libkovan
+	install -d ${D}/${includedir}/kovan
 	install -m 0755 ${S}/include/*.h ${D}/${includedir}/kovan
 	install -m 0755 ${S}/include/*.hpp ${D}/${includedir}/kovan
 }
