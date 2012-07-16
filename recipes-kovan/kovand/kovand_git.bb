@@ -1,4 +1,4 @@
-inherit qt4x11 cmake
+inherit cmake
 
 SRC_URI = "git://github.com/kipr/kovand.git"
 
@@ -17,10 +17,10 @@ OECMAKE_SOURCEPATH = "${S}"
 
 do_install() {
 	install -d ${D}/lib/systemd/system
-	install -m 0755 ${WORKDIR}/botui.service ${D}/lib/systemd/system
+	install -m 0755 ${WORKDIR}/kovand.service ${D}/lib/systemd/system
 
 	install -d ${D}${base_libdir}/systemd/system/basic.target.wants/
-	ln -sf ../botui.service ${D}${base_libdir}/systemd/system/basic.target.wants/
+	ln -sf ../kovand.service ${D}${base_libdir}/systemd/system/basic.target.wants/
 
 	install -d ${D}/usr/sbin
 	install -m 0755 ${S}/deploy/kovand ${D}/usr/sbin/
