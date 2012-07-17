@@ -3,7 +3,8 @@ inherit qt4x11 cmake
 SRC_URI = "git://github.com/kipr/botui.git \
            file://xorg.service \
            file://botui.service \
-           file://cbcnet.config"
+           file://cbcnet.config \
+           file://settings"
 
 DEPENDS = "kiss-compiler easydevice libtinyarchive"
 
