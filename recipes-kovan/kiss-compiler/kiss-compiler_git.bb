@@ -29,3 +29,5 @@ do_install() {
 FILES_${PN} += "${libdir}/libkiss-compiler.a"
 FILES_${PN} += "${includedir}/kiss-compiler"
 FILES_${PN} += "/usr/sbin/compilers"
+
+FILES_${PN}-dbg += "/usr/sbin/compilers/.debug"
