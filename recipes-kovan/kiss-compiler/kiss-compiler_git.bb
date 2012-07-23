@@ -23,7 +23,7 @@ do_install() {
 	install -m 0755 ${S}/include/*.h ${D}/${includedir}/kiss-compiler
 	
 	install -d ${D}/usr/sbin/compilers/
-	install -m 0755 ${S}/llib/*.so ${D}/usr/sbin/compilers/
+	install -m 0755 ${S}/lib/*.so ${D}/usr/sbin/compilers/
 }
 
 FILES_${PN} += "${libdir}/libkiss-compiler.a"
