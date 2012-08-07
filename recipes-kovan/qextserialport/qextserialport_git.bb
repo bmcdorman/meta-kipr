@@ -2,8 +2,6 @@ inherit qt4x11 qmake
 
 SRC_URI = "git://github.com/kipr/qextserialport.git"
 
-DEPENDS = "kiss-compiler"
-
 SR = "${WORKDIR}/git"
 S = "${WORKDIR}/git/buildlib"
 
