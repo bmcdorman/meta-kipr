@@ -26,8 +26,8 @@ do_install() {
 	install -m 0755 ${S}/lib/*.so ${D}/usr/lib/compilers/
 }
 
+FILES_${PN}-dbg += "${libdir}/compilers/.debug"
+
 FILES_${PN} += "${libdir}/libkiss-compiler.a"
 FILES_${PN} += "${includedir}/kiss-compiler"
 FILES_${PN} += "${libdir}/compilers"
-
-FILES_${PN}-dbg += "${libdir}/compilers/.debug"
