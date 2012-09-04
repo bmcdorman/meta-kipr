@@ -9,7 +9,7 @@ S = "${WORKDIR}/git"
 SRCREV = "HEAD"
 LICENSE = "GPL"
 LIC_FILES_CHKSUM = "file://${S}/LICENSE;md5=4fe869ee987a340198fb0d54c55c47f1"
-PR = "20"
+PR = "21"
 
 EXTRA_OECMAKE = "--no-warn-unused-cli"
 
@@ -29,3 +29,5 @@ do_install() {
 FILES_${PN} += "${libdir}/libkiss-compiler.a"
 FILES_${PN} += "${includedir}/kiss-compiler"
 FILES_${PN} += "${libdir}/compilers"
+
+FILES_${PN}-dbg += "${libdir}/compilers/.debug"
