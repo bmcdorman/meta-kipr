@@ -9,7 +9,7 @@ S = "${WORKDIR}/git"
 SRCREV = "HEAD"
 LICENSE = "GPL"
 LIC_FILES_CHKSUM = "file://${S}/LICENSE;md5=4fe869ee987a340198fb0d54c55c47f1"
-PR = "r1"
+PR = "21"
 
 EXTRA_OECMAKE = "--no-warn-unused-cli"
 
@@ -21,7 +21,13 @@ do_install() {
 	
 	install -d ${D}/${includedir}/kiss-compiler
 	install -m 0755 ${S}/include/*.h ${D}/${includedir}/kiss-compiler
+	
+	install -d ${D}/usr/lib/compilers/
+	install -m 0755 ${S}/lib/*.so ${D}/usr/lib/compilers/
 }
+
+FILES_${PN}-dbg += "/usr/lib/compilers/.debug/*"
 
 FILES_${PN} += "${libdir}/libkiss-compiler.a"
 FILES_${PN} += "${includedir}/kiss-compiler"
+FILES_${PN} += "${libdir}/compilers"

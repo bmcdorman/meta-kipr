@@ -3,16 +3,17 @@ inherit qt4x11 cmake
 SRC_URI = "git://github.com/kipr/botui.git \
            file://xorg.service \
            file://botui.service \
-           file://cbcnet.config"
+           file://cbcnet.config \
+           file://settings"
 
-DEPENDS = "kiss-compiler easydevice libtinyarchive"
+DEPENDS = "libkovan kiss-compiler easydevice libtinyarchive"
 
 S = "${WORKDIR}/git"
 
 SRCREV = "HEAD"
 LICENSE = "GPL"
 LIC_FILES_CHKSUM = "file://${S}/LICENSE;md5=4fe869ee987a340198fb0d54c55c47f1"
-PR = "r0"
+PR = "1"
 
 EXTRA_OECMAKE = "--no-warn-unused-cli"
 

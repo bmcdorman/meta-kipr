@@ -28,6 +28,8 @@ IMAGE_INSTALL += " \
 	qt4-plugin-bearer-connman \
 	botui \
 	i2c-wrapper easydevice libtinyarchive \
+	libkovan \
+	kovand \
 	gcc \
 	g++ \
 	${XSERVER} \
@@ -116,7 +118,8 @@ IMAGE_INSTALL += " \
 	opencv-dev \
 	kernel-module-usbtest \
 	kernel-module-g-zero \
-	cmake
+	cmake \
+	xinput-calibrator \
 "
 export IMAGE_BASENAME = "distribution"
 
