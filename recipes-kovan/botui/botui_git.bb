@@ -13,7 +13,7 @@ S = "${WORKDIR}/git"
 SRCREV = "HEAD"
 LICENSE = "GPL"
 LIC_FILES_CHKSUM = "file://${S}/LICENSE;md5=4fe869ee987a340198fb0d54c55c47f1"
-PR = "1"
+PR = "60"
 
 EXTRA_OECMAKE = "--no-warn-unused-cli"
 
