@@ -92,6 +92,7 @@ IMAGE_INSTALL += " \
 	kernel-module-saa7115 \
 	kernel-module-se401 \
 	kernel-module-sn9c102 \
+	kernel-module-spidev \
 	kernel-module-stkwebcam \
 	kernel-module-stv680 \
 	kernel-module-tuner \
