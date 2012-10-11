@@ -87,13 +87,11 @@ IMAGE_INSTALL += " \
 	kernel-module-ovcamchip \
 	kernel-module-pvrusb2 \
 	kernel-module-pwc \
- 	kernel-module-pxa2xx-spi \
 	kernel-module-quickcam-messenger \
 	kernel-module-s2255drv \
 	kernel-module-saa7115 \
 	kernel-module-se401 \
 	kernel-module-sn9c102 \
-	kernel-module-spidev \
 	kernel-module-stkwebcam \
 	kernel-module-stv680 \
 	kernel-module-tuner \
