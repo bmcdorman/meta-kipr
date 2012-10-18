@@ -24,7 +24,6 @@ IMAGE_INSTALL += " \
 	udev-extra-rules \
 	python-fcntl python-subprocess python-ctypes python-dbus python-terminal \
 	mplayer2 \
-	i2c-wrapper easydevice libtinyarchive \
 	gcc \
 	g++ \
 	${XSERVER} \
