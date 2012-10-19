@@ -23,7 +23,6 @@ IMAGE_INSTALL += " \
 	kovan-util \
 	udev-extra-rules \
 	python-fcntl python-subprocess python-ctypes python-dbus python-terminal \
-	mplayer2 \
 	gcc \
 	g++ \
 	${XSERVER} \
@@ -105,11 +104,6 @@ IMAGE_INSTALL += " \
 	kernel-module-uvcvideo \
 	gst-plugins-base \
 	gst-plugins-good \
-	gstreamer \
-	gstreamer-dev \
-	opencv \
-	opencv-apps \
-	opencv-dev \
 	kernel-module-usbtest \
 	kernel-module-g-zero \
 	cmake \
