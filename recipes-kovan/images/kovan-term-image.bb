@@ -2,6 +2,11 @@
 
 require systemd-image.bb
 
+	
++# Replace connman with networkmanager
++CONMANPKGS = "networkmanager"
+
+
 IMAGE_INSTALL += " \
 	usbutils \
 	i2c-tools \
