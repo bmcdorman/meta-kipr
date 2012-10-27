@@ -3,8 +3,8 @@
 require systemd-image.bb
 
 	
-+# Replace connman with networkmanager
-+CONMANPKGS = "networkmanager"
+# Replace connman with networkmanager
+CONMANPKGS = "networkmanager"
 
 
 IMAGE_INSTALL += " \
