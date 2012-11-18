@@ -2,7 +2,7 @@ inherit qt4x11 cmake
 
 SRC_URI = "git://github.com/kipr/easydevice.git"
 
-DEPENDS = "kiss-compiler"
+DEPENDS = "libkar pcompiler"
 
 S = "${WORKDIR}/git"
 
@@ -21,7 +21,7 @@ do_install() {
 	install -m 0755 ${S}/lib/libeasydevice.a ${D}/usr/lib
 	
 	install -d ${D}/${includedir}/easydevice
-	install -m 0755 ${S}/include/*.h ${D}/${includedir}/easydevice
+	install -m 0755 ${S}/include/*.hpp ${D}/${includedir}/easydevice
 }
 
 FILES_${PN} += "${libdir}/libeasydevice.a"

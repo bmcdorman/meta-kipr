@@ -6,7 +6,7 @@ SRC_URI = "git://github.com/kipr/botui.git \
            file://cbcnet.config \
            file://settings"
 
-DEPENDS = "libkovan kiss-compiler easydevice libtinyarchive"
+DEPENDS = "libkovan pcompiler easydevice libkar opencv"
 
 S = "${WORKDIR}/git"
 

@@ -2,14 +2,14 @@ inherit qt4x11 cmake
 
 SRC_URI = "git://github.com/kipr/libkovan.git"
 
-DEPENDS = "kiss-compiler"
+DEPENDS = ""
 
 S = "${WORKDIR}/git"
 
 SRCREV = "HEAD"
 LICENSE = "GPL"
 LIC_FILES_CHKSUM = "file://${S}/LICENSE;md5=4fe869ee987a340198fb0d54c55c47f1"
-PR = "1"
+PR = "11"
 
 EXTRA_OECMAKE = "--no-warn-unused-cli"
 
@@ -25,4 +25,4 @@ do_install() {
 }
 
 FILES_${PN} += "${libdir}/libkovan.so"
-FILES_${PN} += "${includedir}/easydevice"
+FILES_${PN} += "${includedir}/kovan"
