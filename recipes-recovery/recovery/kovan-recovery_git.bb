@@ -1,24 +1,22 @@
 # The recovery image is rather strange in how it's deployed:
 # 1) Build just enough of a kernel to let modules build
-# 2) Build wifi modules
-# 3) Build recovery console
-# 4) Create cpio with output of (2) and (3)
-# 5) Build a kernel with the cpio image attached from (4)
-# 6) Package the kernel
+# 2) Build recovery console
+# 3) Create cpio with output of 2
+# 4) Build a kernel with the cpio image attached from 3
+# 5) Package the kerne
 
-SRC_URI = "git://github.com/kipr/kovan-recovery.git;name=kovan-recovery \
-           git://github.com/kipr/linux.git;subpath=src;branch=kovan;name=kernel \
+SRC_URI = "git://github.com/kipr/linux.git;branch=kovan;name=kernel \
            file://defconfig \
-           file://disable-fpga-irqs.patch;striplevel=0 \
 "
+
 S = "${WORKDIR}"
-SRCREV = "${AUTOREV}"
+SRCREV = "HEAD"
 LICENSE = "GPL"
-LIC_FILES_CHKSUM = "file://${S}/LICENSE;md5=4fe869ee987a340198fb0d54c55c47f1"
+LIC_FILES_CHKSUM = "file://${S}/kovan-recovery/LICENSE;md5=d32239bcb673463ab874e80d47fae504"
 PACKAGE_ARCH = "${MACHINE}"
 RECOVERY_IMAGE_ROOTFS = "${WORKDIR}/recovery"
 RECOVERY_IMAGE_FILE   = "${WORKDIR}/recovery.cpio"
-PR = "r10"
+PR = "r29"
 RREPLACES_${PN} = "kovan-recovery-blob"
 
 COMPATIBLE_MACHINE = "kovan"
@@ -28,6 +26,11 @@ MACHINE_POSTPROCESS_COMMAND = ""
 DEPENDS = ""
 DEPENDS_append_virtclass_native = "makedevs-native fakeroot-native"
 
+do_fetch() {
+	cd ${WORKDIR}
+	git clone git://github.com/kipr/kovan-recovery.git
+}
+
 do_compile() {
 	true
 }
@@ -35,12 +38,12 @@ do_compile() {
 do_compile_kernel_pass1() {
 	unset CFLAGS CPPFLAGS CXXFLAGS LDFLAGS MACHINE
 	export CROSS_COMPILE="${TARGET_PREFIX}"
-	cp defconfig src/.config
-	cd src; oe_runmake ARCH=arm prepare scripts; cd ..
+	cp defconfig git/.config
+	cd git; oe_runmake ARCH=arm prepare scripts; cd ..
 }
 
 do_compile_recovery() {
-	cd git
+	cd kovan-recovery
 	LDFLAGS="${LDFLAGS}"
 	oe_runmake MY_LIBS="-lm"
 	${STRIP} kovan-recovery
@@ -53,12 +56,12 @@ fakeroot do_populate_kovan_recovery() {
 	install -d ${RECOVERY_IMAGE_ROOTFS}/dev
 	install -d ${RECOVERY_IMAGE_ROOTFS}/dev/input
 
-	install -m 0755 ${WORKDIR}/git/kovan-recovery ${RECOVERY_IMAGE_ROOTFS}/init
-	install -m 0755 ${WORKDIR}/git/AMD.ttf ${RECOVERY_IMAGE_ROOTFS}
+	install -m 0755 ${WORKDIR}/kovan-recovery/kovan-recovery ${RECOVERY_IMAGE_ROOTFS}/init
+#	install -m 0755 ${WORKDIR}/AMD.ttf ${RECOVERY_IMAGE_ROOTFS}
 
 	# Extract the C libraries
 	cd ${RECOVERY_IMAGE_ROOTFS}
-	for i in 'armv5te/libnl2_2.0-r5.0.9_*' 'armv5te/libnl-genl2_*' 'armv5te/libc6_*' 'armv5te/libfreetype6_*' 'armv5te/libz1_*'
+	for i in 'armv5te/libc6_*'
 	do
 		ar p ${DEPLOY_DIR_IPK}/$i data.tar.gz | tar xz
 	done
@@ -97,11 +100,11 @@ fakeroot do_populate_kovan_recovery() {
 do_compile_kernel_pass2() {
 	unset CFLAGS CPPFLAGS CXXFLAGS LDFLAGS MACHINE
 	export CROSS_COMPILE="${TARGET_PREFIX}"
-	cd src
+	cd git
 	sed -i 's|^CONFIG_INITRAMFS_SOURCE=.*$|CONFIG_INITRAMFS_SOURCE="${RECOVERY_IMAGE_FILE}"|g' .config
 	oe_runmake ARCH=arm
 	cd ..
-	cp src/arch/arm/boot/zImage ${DEPLOY_DIR_IMAGE}/recovery-mode
+	cp git/arch/arm/boot/zImage ${DEPLOY_DIR_IMAGE}/recovery-mode
 }
 
 
