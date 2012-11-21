@@ -56,6 +56,7 @@ IMAGE_INSTALL += " \
         \
 	${XSERVER} \
 	botui \
+	xinput-calibrator \
 	kernel-module-cs53l32a \
 	kernel-module-cx231xx-alsa \
 	kernel-module-cx231xx \

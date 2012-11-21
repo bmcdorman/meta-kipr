@@ -57,7 +57,7 @@ fakeroot do_populate_kovan_recovery() {
 	install -d ${RECOVERY_IMAGE_ROOTFS}/dev/input
 
 	install -m 0755 ${WORKDIR}/kovan-recovery/kovan-recovery ${RECOVERY_IMAGE_ROOTFS}/init
-#	install -m 0755 ${WORKDIR}/AMD.ttf ${RECOVERY_IMAGE_ROOTFS}
+	# install -m 0755 ${WORKDIR}/AMD.ttf ${RECOVERY_IMAGE_ROOTFS}
 
 	# Extract the C libraries
 	cd ${RECOVERY_IMAGE_ROOTFS}
@@ -65,6 +65,7 @@ fakeroot do_populate_kovan_recovery() {
 	do
 		ar p ${DEPLOY_DIR_IPK}/$i data.tar.gz | tar xz
 	done
+	
 	mknod ${RECOVERY_IMAGE_ROOTFS}/dev/mem          c 1 1
 	mknod ${RECOVERY_IMAGE_ROOTFS}/dev/kmem         c 1 2
 	mknod ${RECOVERY_IMAGE_ROOTFS}/dev/null         c 1 3
