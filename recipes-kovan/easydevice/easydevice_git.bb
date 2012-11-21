@@ -6,11 +6,10 @@ DEPENDS = "libkar pcompiler"
 
 S = "${WORKDIR}/git"
 
-#SRCREV = "HEAD"
-SRCREV = "a59ed026e46799e8c8f6ebcde8e5dde96c231cbc"
+SRCREV = "HEAD"
 LICENSE = "GPL"
 LIC_FILES_CHKSUM = "file://${S}/LICENSE;md5=4fe869ee987a340198fb0d54c55c47f1"
-PR = "r1"
+PR = "4"
 
 EXTRA_OECMAKE = "--no-warn-unused-cli"
 

@@ -1,0 +1,3 @@
+SANITY_VERSION 1
+TMPDIR /home/smc/kovan/oe/build/tmp-angstrom_2010_x-eglibc
+SSTATE_DIR /home/smc/kovan/oe/build/sstate-cache
