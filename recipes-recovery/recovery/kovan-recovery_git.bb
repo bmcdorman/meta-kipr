@@ -13,6 +13,8 @@ SRC_URI = "git://github.com/kipr/kovan-recovery.git;name=kovan-recovery \
 "
 S = "${WORKDIR}"
 SRCREV = "${AUTOREV}"
+LICENSE = "GPL"
+LIC_FILES_CHKSUM = "file://${S}/LICENSE;md5=4fe869ee987a340198fb0d54c55c47f1"
 PACKAGE_ARCH = "${MACHINE}"
 RECOVERY_IMAGE_ROOTFS = "${WORKDIR}/recovery"
 RECOVERY_IMAGE_FILE   = "${WORKDIR}/recovery.cpio"
