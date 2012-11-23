@@ -51,8 +51,6 @@ do_compile_recovery() {
 
 fakeroot do_populate_kovan_recovery() {
 	install -d ${RECOVERY_IMAGE_ROOTFS}
-	install -d ${RECOVERY_IMAGE_ROOTFS}/modules
-	install -d ${RECOVERY_IMAGE_ROOTFS}/firmware
 	install -d ${RECOVERY_IMAGE_ROOTFS}/dev
 	install -d ${RECOVERY_IMAGE_ROOTFS}/dev/input
 
