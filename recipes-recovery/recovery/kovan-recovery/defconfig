@@ -364,7 +364,7 @@ CONFIG_ALIGNMENT_TRAP=y
 #
 CONFIG_ZBOOT_ROM_TEXT=0x0
 CONFIG_ZBOOT_ROM_BSS=0x0
-CONFIG_CMDLINE="root=/dev/mmcblk0p2 rootwait console=ttyS0,115200 mem=128M uart_dma sysrq_always_enabled rootfstype=ext4 rw consoleblank=0"
+CONFIG_CMDLINE="root=/dev/ram0 init=/init console=ttyS0,115200 mem=128M"
 # CONFIG_XIP_KERNEL is not set
 CONFIG_KEXEC=y
 CONFIG_ATAGS_PROC=y
