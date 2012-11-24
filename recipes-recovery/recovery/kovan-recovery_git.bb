@@ -54,6 +54,8 @@ fakeroot do_populate_kovan_recovery() {
 	install -d ${RECOVERY_IMAGE_ROOTFS}/dev
 	install -d ${RECOVERY_IMAGE_ROOTFS}/dev/input
 
+	install -d ${RECOVERY_IMAGE_ROOTFS}/mnt
+
 	install -m 0755 ${WORKDIR}/kovan-recovery/kovan-recovery ${RECOVERY_IMAGE_ROOTFS}/init
 	# install -m 0755 ${WORKDIR}/AMD.ttf ${RECOVERY_IMAGE_ROOTFS}
 
