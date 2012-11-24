@@ -80,6 +80,9 @@ fakeroot do_populate_kovan_recovery() {
 	mknod ${RECOVERY_IMAGE_ROOTFS}/dev/tty          c 5 0
 	mknod ${RECOVERY_IMAGE_ROOTFS}/dev/console      c 5 1
 
+	mknod ${RECOVERY_IMAGE_ROOTFS}/dev/sda		b 8 0
+	mknod ${RECOVERY_IMAGE_ROOTFS}/dev/sda1		b 8 1
+	
 	mknod ${RECOVERY_IMAGE_ROOTFS}/dev/input/event0 c 13 64
 	mknod ${RECOVERY_IMAGE_ROOTFS}/dev/input/event1 c 13 65
 
