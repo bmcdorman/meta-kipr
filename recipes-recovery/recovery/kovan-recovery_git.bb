@@ -16,7 +16,7 @@ LIC_FILES_CHKSUM = "file://${S}/kovan-recovery/LICENSE;md5=d32239bcb673463ab874e
 PACKAGE_ARCH = "${MACHINE}"
 RECOVERY_IMAGE_ROOTFS = "${WORKDIR}/recovery"
 RECOVERY_IMAGE_FILE   = "${WORKDIR}/recovery.cpio"
-PR = "r29"
+PR = "r37"
 RREPLACES_${PN} = "kovan-recovery-blob"
 
 COMPATIBLE_MACHINE = "kovan"
@@ -96,13 +96,14 @@ fakeroot do_populate_kovan_recovery() {
 	mknod ${RECOVERY_IMAGE_ROOTFS}/dev/ttyUSB0      c 188 0
 
 	cd ${RECOVERY_IMAGE_ROOTFS} && (find . | cpio -o -H newc >${RECOVERY_IMAGE_FILE})
+	gzip ${RECOVERY_IMAGE_FILE}
 }
 
 do_compile_kernel_pass2() {
 	unset CFLAGS CPPFLAGS CXXFLAGS LDFLAGS MACHINE
 	export CROSS_COMPILE="${TARGET_PREFIX}"
 	cd git
-	sed -i 's|^CONFIG_INITRAMFS_SOURCE=.*$|CONFIG_INITRAMFS_SOURCE="${RECOVERY_IMAGE_FILE}"|g' .config
+	sed -i 's|^CONFIG_INITRAMFS_SOURCE=.*$|CONFIG_INITRAMFS_SOURCE="${RECOVERY_IMAGE_FILE}.gz"|g' .config
 	oe_runmake ARCH=arm
 	cd ..
 	cp git/arch/arm/boot/zImage ${DEPLOY_DIR_IMAGE}/recovery-mode
