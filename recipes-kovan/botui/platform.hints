@@ -1,0 +1,4 @@
+[General]
+LD_FLAGS=-lkovan -lm
+C_FLAGS=-include kovan/kovan.h -include stdio.h
+CPP_FLAGS=-include kovan/kovan.hpp -include stdio.h
