@@ -16,7 +16,7 @@ LIC_FILES_CHKSUM = "file://${S}/kovan-recovery/LICENSE;md5=d32239bcb673463ab874e
 PACKAGE_ARCH = "${MACHINE}"
 RECOVERY_IMAGE_ROOTFS = "${WORKDIR}/recovery"
 RECOVERY_IMAGE_FILE   = "${WORKDIR}/recovery.cpio"
-PR = "r37"
+PR = "r38"
 RREPLACES_${PN} = "kovan-recovery-blob"
 
 COMPATIBLE_MACHINE = "kovan"
@@ -80,6 +80,9 @@ fakeroot do_populate_kovan_recovery() {
 	mknod ${RECOVERY_IMAGE_ROOTFS}/dev/tty          c 5 0
 	mknod ${RECOVERY_IMAGE_ROOTFS}/dev/console      c 5 1
 
+	mknod ${RECOVERY_IMAGE_ROOTFS}/dev/sda		b 8 0
+	mknod ${RECOVERY_IMAGE_ROOTFS}/dev/sda1		b 8 1
+	
 	mknod ${RECOVERY_IMAGE_ROOTFS}/dev/input/event0 c 13 64
 	mknod ${RECOVERY_IMAGE_ROOTFS}/dev/input/event1 c 13 65
 
