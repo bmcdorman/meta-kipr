@@ -3,9 +3,7 @@ inherit qt4x11 cmake
 SRC_URI = "git://github.com/kipr/botui.git \
            file://xorg.service \
            file://botui.service \
-           file://cbcnet.config \
-           file://platform.hints \
-           file://settings"
+           file://platform.hints"
 
 DEPENDS = "libkovan pcompiler easydevice libkar opencv-2.4.3"
 
