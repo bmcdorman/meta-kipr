@@ -1,6 +1,7 @@
 DESCRIPTION = "Kovan Kernel Module for FPGA communication"
 PR = "r0"
 SRC_URI = "git://github.com/kipr/kovan-kmod.git"
+SRCREV = "HEAD"
 
 S = "${WORKDIR}/git"
 
