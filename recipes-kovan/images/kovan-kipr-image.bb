@@ -50,12 +50,14 @@ IMAGE_INSTALL += " \
 	strace gdb lsof bc bash procps kexec \
 	gadget-init \
 	openssh openssh-scp openssh-ssh \
-	kovan-util \
+	kovan-fpga \
+	kovan-kmod \
 	udev udev-extra-rules \
 	python-fcntl python-subprocess python-ctypes python-terminal \
         \
 	${XSERVER} \
 	botui \
+	opencv-2.4.3-dev \
 	xinput-calibrator \
 	kernel-module-cs53l32a \
 	kernel-module-cx231xx-alsa \

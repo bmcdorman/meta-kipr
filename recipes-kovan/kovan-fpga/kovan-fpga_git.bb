@@ -1,12 +1,11 @@
 DESCRIPTION = "Kovan FPGA"
 HOMEPAGE = "http://www.kipr.org/"
 LICENSE = "BSD"
-PR = "r1"
+PR = "r3"
 
 SRC_URI = "git://github.com/kipr/kovan-fpga.git \
            file://logo.raw565.gz \
-           file://kovan-fpga.rules \
-"
+           file://kovan-fpga.rules"
 
 SRCREV = "HEAD"
 S = "${WORKDIR}/git"
@@ -25,7 +24,10 @@ do_install() {
 	# fpga module devnode udev rules
 	install -d ${D}${base_libdir}/udev
 	install -d ${D}${base_libdir}/udev/rules.d
-	install -m 0644 ${S}/helpers/kovan-fpga.rules ${D}${base_libdir}/udev/rules.d/45-kovan-fpga.rules
+	install -m 0644 ${WORKDIR}/kovan-fpga.rules ${D}${base_libdir}/udev/rules.d/45-kovan-fpga.rules
+	
+	install -d ${D}${base_libdir}/firmware
+	install -m 0644 ${S}/kovan.bit ${D}${base_libdir}/firmware/kovan.bit
 
 	# FPGA firmware
 	# This is written into MBR and loaded with u-boot
@@ -35,6 +37,7 @@ do_install() {
 }
 
 FILES_${PN} += "${base_libdir}/udev/"
+FILES_${PN} += "${base_libdir}/firmware"
 
 pkg_postinst_${PN}_append() {
 	config_util --cmd=putblock --dev=/dev/mmcblk0p1 --block=LX9 < ${base_libdir}/firmware/kovan.bit
