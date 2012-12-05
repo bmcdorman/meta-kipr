@@ -1,7 +1,12 @@
 [Unit]
-Description=kovan-kmod
+Description=kovan
+After=local-fs.target
+Requires=silvermoon-fpga
 
 [Service]
-Type=oneshot
+Type=singleshot
+ExecStart=/sbin/modprobe kovan
 RemainAfterExit=yes
-ExecStart=insmod /lib/modules/`uname -r`/drivers/kovan/kovan.ko
+
+[Install]
+WantedBy=multi-user.target
