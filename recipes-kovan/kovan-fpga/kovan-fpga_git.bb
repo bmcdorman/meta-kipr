@@ -1,11 +1,13 @@
 DESCRIPTION = "Kovan FPGA"
 HOMEPAGE = "http://www.kipr.org/"
 LICENSE = "BSD"
-PR = "r3"
+PR = "r5"
 
 SRC_URI = "git://github.com/kipr/kovan-fpga.git \
            file://logo.raw565.gz \
-           file://kovan-fpga.rules"
+           file://kovan-fpga.rules \
+           file://kovan-fpga.service \
+           file://fpga-config.py"
 
 SRCREV = "HEAD"
 S = "${WORKDIR}/git"
@@ -34,9 +36,21 @@ do_install() {
 	install -d ${DEPLOY_DIR_IMAGE}
 	install -m 0644 ${S}/kovan.bit ${DEPLOY_DIR_IMAGE}/
 	install -m 0644 ${WORKDIR}/logo.raw565.gz ${DEPLOY_DIR_IMAGE}/
+
+	# Startup Service
+	install -d ${D}${base_libdir}/systemd/system/
+	install -m 0755 ${WORKDIR}/kovan-fpga.service ${D}${base_libdir}/systemd/system
+	install -d ${D}${base_libdir}/systemd/system/basic.target.wants/
+	ln -sf ../kovan-fpga.service ${D}${base_libdir}/systemd/system/basic.target.wants/
+
+	# Utilities
+	install -d ${D}${sbindir}
+	install -m 0755 ${WORKDIR}/fpga-config.py ${D}${sbindir}/fpga-config.py
 }
 
-FILES_${PN} += "${base_libdir}/udev/"
+FILES_${PN} += "${base_sbindir}"
+FILES_${PN} += "${sbindir}"
+FILES_${PN} += "${base_libdir}/udev/ ${base_libdir}/systemd"
 FILES_${PN} += "${base_libdir}/firmware"
 
 pkg_postinst_${PN}_append() {

@@ -1,0 +1,12 @@
+[Unit]
+Description=Kovan FPGA Management Service
+After=local-fs.target
+Requires=silvermoon-fpga
+
+[Service]
+ExecStart=/usr/sbin/fpga-config.py
+ExecStop=/usr/sbin/fpga-reset.py
+RemainAfterExit=yes  
+
+[Install]
+WantedBy=multi-user.target

@@ -57,7 +57,7 @@ IMAGE_INSTALL += " \
         \
 	${XSERVER} \
 	botui \
-	opencv-2.4.3-dev \
+	opencv-dev \
 	xinput-calibrator \
 	kernel-module-cs53l32a \
 	kernel-module-cx231xx-alsa \

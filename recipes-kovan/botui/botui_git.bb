@@ -5,14 +5,14 @@ SRC_URI = "git://github.com/kipr/botui.git \
            file://botui.service \
            file://platform.hints"
 
-DEPENDS = "libkovan pcompiler easydevice libkar opencv-2.4.3"
+DEPENDS = "libkovan pcompiler easydevice libkar opencv"
 
 S = "${WORKDIR}/git"
 
 SRCREV = "HEAD"
 LICENSE = "GPL"
 LIC_FILES_CHKSUM = "file://${S}/LICENSE;md5=4fe869ee987a340198fb0d54c55c47f1"
-PR = "95"
+PR = "97"
 
 EXTRA_OECMAKE = "--no-warn-unused-cli"
 
