@@ -1,0 +1,7 @@
+[Unit]
+Description=kovan-kmod
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=insmod /lib/modules/`uname -r`/drivers/kovan/kovan.ko

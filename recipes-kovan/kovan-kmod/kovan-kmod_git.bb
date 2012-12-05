@@ -1,5 +1,6 @@
 DESCRIPTION = "Kovan Kernel Module for FPGA communication"
-SRC_URI = "git://github.com/kipr/kovan-kmod.git"
+SRC_URI = "git://github.com/kipr/kovan-kmod.git \
+           file://kovan.service"
 SRCREV = "HEAD"
 SECTION = "kernel/modules"
 PRIORITY = "optional"
@@ -24,8 +25,11 @@ do_compile () {
 }
 
 do_install () {
-	install -d ${D}${base_libdir}/modules/${KERNEL_VERSION}/kernel/drivers/kovan-kmod
-	install -m 0755 ${S}/kovan${KERNEL_OBJECT_SUFFIX} ${D}${base_libdir}/modules/${KERNEL_VERSION}/kernel/drivers/kovan-kmod/
+	install -d ${D}${base_libdir}/modules/${KERNEL_VERSION}/kernel/drivers/kovan
+	install -m 0755 ${S}/kovan${KERNEL_OBJECT_SUFFIX} ${D}${base_libdir}/modules/${KERNEL_VERSION}/kernel/drivers/kovan/
+	
+	install -d ${D}${base_libdir}/systemd/system/sysinit.target.wants/
+	install -m 0777 ${WORKDIR}/kovan.service ${D}${base_libdir}/systemd/system/sysinit.target.wants/
 }
 
-FILES_${PN} = "${base_libdir}/modules/"
+FILES_${PN} = "${base_libdir}/"
