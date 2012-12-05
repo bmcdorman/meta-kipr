@@ -28,8 +28,11 @@ do_install () {
 	install -d ${D}${base_libdir}/modules/${KERNEL_VERSION}/kernel/drivers/kovan
 	install -m 0755 ${S}/kovan${KERNEL_OBJECT_SUFFIX} ${D}${base_libdir}/modules/${KERNEL_VERSION}/kernel/drivers/kovan/
 	
+	install -d ${D}/lib/systemd/system
+	install -m 0755 ${WORKDIR}/kovan.service ${D}/lib/systemd/system
+	
 	install -d ${D}${base_libdir}/systemd/system/sysinit.target.wants/
-	install -m 0777 ${WORKDIR}/kovan.service ${D}${base_libdir}/systemd/system/sysinit.target.wants/
+	ln -sf ../botui.service ${D}${base_libdir}/systemd/system/basic.target.wants/
 }
 
 FILES_${PN} = "${base_libdir}/"
