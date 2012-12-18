@@ -16,14 +16,14 @@ LIC_FILES_CHKSUM = "file://${S}/kovan-recovery/LICENSE;md5=d32239bcb673463ab874e
 PACKAGE_ARCH = "${MACHINE}"
 RECOVERY_IMAGE_ROOTFS = "${WORKDIR}/recovery"
 RECOVERY_IMAGE_FILE   = "${WORKDIR}/recovery.cpio"
-PR = "r38"
+PR = "r55"
 RREPLACES_${PN} = "kovan-recovery-blob"
 
 COMPATIBLE_MACHINE = "kovan"
 ONLINE_PACKAGE_MANAGEMENT = "none"
 MACHINE_POSTPROCESS_COMMAND = ""
 
-DEPENDS = ""
+DEPENDS = "zlib"
 DEPENDS_append_virtclass_native = "makedevs-native fakeroot-native"
 
 do_fetch() {
@@ -45,7 +45,7 @@ do_compile_kernel_pass1() {
 do_compile_recovery() {
 	cd kovan-recovery
 	LDFLAGS="${LDFLAGS}"
-	oe_runmake MY_LIBS="-lm"
+	oe_runmake MY_LIBS="-lm -lz"
 	${STRIP} kovan-recovery
 }
 
@@ -61,7 +61,7 @@ fakeroot do_populate_kovan_recovery() {
 
 	# Extract the C libraries
 	cd ${RECOVERY_IMAGE_ROOTFS}
-	for i in 'armv5te/libc6_*'
+	for i in 'armv5te/libc6_*' 'armv5te/libz1_*'
 	do
 		ar p ${DEPLOY_DIR_IPK}/$i data.tar.gz | tar xz
 	done

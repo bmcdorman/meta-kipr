@@ -6,7 +6,7 @@ SECTION = "kernel/modules"
 PRIORITY = "optional"
 RDEPENDS = "kernel (${KERNEL_VERSION})"
 DEPENDS = "virtual/kernel"
-PR = "r2"
+PR = "r4"
 LICENSE = "GPL"
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/GPL-3.0;md5=c79ff39f19dfec6d293b95dea7b07891"
 S = "${WORKDIR}/git"
@@ -31,8 +31,8 @@ do_install () {
 	install -d ${D}/lib/systemd/system
 	install -m 0755 ${WORKDIR}/kovan.service ${D}/lib/systemd/system
 	
-	install -d ${D}${base_libdir}/systemd/system/sysinit.target.wants/
-	ln -sf ../botui.service ${D}${base_libdir}/systemd/system/basic.target.wants/
+	install -d ${D}${base_libdir}/systemd/system/basic.target.wants/
+	ln -sf ../kovan.service ${D}${base_libdir}/systemd/system/basic.target.wants/
 }
 
 FILES_${PN} = "${base_libdir}/"
