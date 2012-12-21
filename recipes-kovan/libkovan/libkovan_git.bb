@@ -1,16 +1,15 @@
-inherit qt4x11 cmake
+inherit cmake
 
 SRC_URI = "git://github.com/kipr/libkovan.git"
 
-DEPENDS = "opencv i2c-wrapper"
-RDEPENDS_${PN} = "i2c-wrapper"
+DEPENDS = "opencv zbar i2c-wrapper"
 
 S = "${WORKDIR}/git"
 
 SRCREV = "HEAD"
-LICENSE = "GPL"
+LICENSE = "GPLv3"
 LIC_FILES_CHKSUM = "file://${S}/LICENSE;md5=4fe869ee987a340198fb0d54c55c47f1"
-PR = "42"
+PR = "60"
 
 EXTRA_OECMAKE = "--no-warn-unused-cli -DKOVAN=1"
 
@@ -26,4 +25,4 @@ do_install() {
 }
 
 FILES_${PN} += "${libdir}/libkovan.so"
-FILES_${PN} += "${includedir}/kovan"
+FILES_${PN}-dev += "${includedir}/kovan"
