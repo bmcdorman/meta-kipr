@@ -6,10 +6,11 @@ DEPENDS = "opencv zbar i2c-wrapper"
 
 S = "${WORKDIR}/git"
 
+COMPATIBLE_MACHINE = "kovan"
 SRCREV = "HEAD"
 LICENSE = "GPLv3"
 LIC_FILES_CHKSUM = "file://${S}/LICENSE;md5=4fe869ee987a340198fb0d54c55c47f1"
-PR = "60"
+PR = "65"
 
 EXTRA_OECMAKE = "--no-warn-unused-cli -DKOVAN=1"
 

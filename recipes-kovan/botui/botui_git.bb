@@ -10,10 +10,11 @@ DEPENDS = "libkovan pcompiler easydevice libkar opencv"
 
 S = "${WORKDIR}/git"
 
+COMPATIBLE_MACHINE = "kovan"
 SRCREV = "HEAD"
-LICENSE = "GPL"
+LICENSE = "GPLv3"
 LIC_FILES_CHKSUM = "file://${S}/LICENSE;md5=4fe869ee987a340198fb0d54c55c47f1"
-PR = "133"
+PR = "144"
 
 EXTRA_OECMAKE = "--no-warn-unused-cli"
 

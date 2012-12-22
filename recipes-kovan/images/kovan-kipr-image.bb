@@ -57,8 +57,11 @@ IMAGE_INSTALL += " \
         \
 	${XSERVER} \
 	botui \
+	libkovan \
+	libkovan-dev \
 	opencv-dev \
 	xinput-calibrator \
+	mplayer \
 	kernel-module-cs53l32a \
 	kernel-module-cx231xx-alsa \
 	kernel-module-cx231xx \
