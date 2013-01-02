@@ -52,6 +52,7 @@ IMAGE_INSTALL += " \
 	openssh openssh-scp openssh-ssh \
 	kovan-fpga \
 	kovan-kmod \
+	kovan-serial \
 	udev udev-extra-rules \
 	python-fcntl python-subprocess python-ctypes python-terminal \
         \
