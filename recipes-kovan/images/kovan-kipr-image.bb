@@ -53,7 +53,7 @@ IMAGE_INSTALL += " \
 	kovan-fpga \
 	kovan-kmod \
 	kovan-serial \
-	udev udev-extra-rules \
+	udev udev-kovan-rules \
 	python-fcntl python-subprocess python-ctypes python-terminal \
         \
 	${XSERVER} \
