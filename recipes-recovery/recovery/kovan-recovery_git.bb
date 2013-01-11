@@ -16,7 +16,7 @@ LIC_FILES_CHKSUM = "file://${S}/kovan-recovery/LICENSE;md5=d32239bcb673463ab874e
 PACKAGE_ARCH = "${MACHINE}"
 RECOVERY_IMAGE_ROOTFS = "${WORKDIR}/recovery"
 RECOVERY_IMAGE_FILE   = "${WORKDIR}/recovery.cpio"
-PR = "r56"
+PR = "r58"
 RREPLACES_${PN} = "kovan-recovery-blob"
 
 COMPATIBLE_MACHINE = "kovan"

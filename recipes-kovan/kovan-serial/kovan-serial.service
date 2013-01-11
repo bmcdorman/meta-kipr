@@ -1,10 +1,10 @@
 [Unit]
 Description=Kovan Serial Daemon
-After=local-fs.target
+After=multi-user.target serial-gadget-init.service sys-devices-platform-pxa\x2du2o-gadget-tty-ttyGS0.device
+Requires=sys-devices-platform-pxa\x2du2o-gadget-tty-ttyGS0.device
 
 [Service]
 ExecStart=/usr/sbin/kovan-serial
 Restart=on-failure
 
-[Install]
-WantedBy=multi-user.target
+

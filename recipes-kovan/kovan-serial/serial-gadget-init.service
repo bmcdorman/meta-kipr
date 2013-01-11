@@ -1,0 +1,9 @@
+[Unit]
+Description=USG OTG serial kernel module
+After=multi-user.target
+
+[Service]
+RemainAfterExit=yes
+ExecStart=/sbin/modprobe g_serial
+ExecStop=/sbin/rmmod g_serial
+

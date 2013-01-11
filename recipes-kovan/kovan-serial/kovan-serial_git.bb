@@ -1,6 +1,7 @@
 inherit qt4x11 cmake
 
 SRC_URI = "git://github.com/kipr/kovan-serial.git \
+           file://serial-gadget-init.service \
            file://kovan-serial.service"
 
 DEPENDS = "libkovanserial libkovan pcompiler libkar"
@@ -11,19 +12,20 @@ COMPATIBLE_MACHINE = "kovan"
 SRCREV = "HEAD"
 LICENSE = "GPLv3"
 LIC_FILES_CHKSUM = "file://${S}/LICENSE;md5=4fe869ee987a340198fb0d54c55c47f1"
-PR = "4"
+PR = "30"
 
 EXTRA_OECMAKE = "--no-warn-unused-cli"
 
 OECMAKE_SOURCEPATH = "${S}"
 
 do_install() {
-	# X11 and botui start scripts
 	install -d ${D}/lib/systemd/system
 	install -m 0755 ${WORKDIR}/kovan-serial.service ${D}/lib/systemd/system
+	install -m 0755 ${WORKDIR}/serial-gadget-init.service ${D}/lib/systemd/system
 
-	install -d ${D}${base_libdir}/systemd/system/basic.target.wants/
-	ln -sf ../kovan-serial.service ${D}${base_libdir}/systemd/system/basic.target.wants/
+	install -d ${D}${base_libdir}/systemd/system/multi-user.target.wants/
+	ln -sf ../serial-gadget-init.service ${D}${base_libdir}/systemd/system/multi-user.target.wants/
+	ln -sf ../kovan-serial.service ${D}${base_libdir}/systemd/system/multi-user.target.wants/
 
 	# User directories
 	install -d ${D}/kovan
