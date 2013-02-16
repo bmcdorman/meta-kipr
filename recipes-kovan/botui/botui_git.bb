@@ -4,6 +4,8 @@ SRC_URI = "git://github.com/kipr/botui.git \
            file://xorg.service \
            file://botui.service \
            file://platform.hints \
+           file://fix-serial.c \
+           file://99-calibration.conf \
            file://target.h"
 
 DEPENDS = "libkovan pcompiler easydevice libkar opencv"
@@ -14,7 +16,7 @@ COMPATIBLE_MACHINE = "kovan"
 SRCREV = "HEAD"
 LICENSE = "GPLv3"
 LIC_FILES_CHKSUM = "file://${S}/LICENSE;md5=4fe869ee987a340198fb0d54c55c47f1"
-PR = "173"
+PR = "217"
 
 EXTRA_OECMAKE = "--no-warn-unused-cli"
 
@@ -33,15 +35,23 @@ do_install() {
 	install -d ${D}/etc/kovan
 	install -m 0755 ${WORKDIR}/platform.hints ${D}/etc/kovan
 
+	install -d ${D}/kovan
+	install -m 0755 ${WORKDIR}/fix-serial.c ${D}/kovan/
+
 	# Target fixups
 	install -d ${D}/usr/include
 	install -m 0755 ${WORKDIR}/target.h ${D}/usr/include
 
 	install -d ${D}/usr/sbin
 	install -m 0755 ${S}/deploy/botui ${D}/usr/sbin/
+	
+	# Default screen calibration
+	install -d ${D}/etc/X11/xorg.conf.d
+	install -m 0755 ${WORKDIR}/99-calibration.conf ${D}/etc/X11/xorg.conf.d/
 }
 
 FILES_${PN} = "${bindir} ${sbindir}"
 FILES_${PN} += "${base_libdir}/systemd"
-FILES_${PN} += "/etc/kovan"
+FILES_${PN} += "/etc"
+FILES_${PN} += "/kovan"
 FILES_${PN} += "/usr/include"

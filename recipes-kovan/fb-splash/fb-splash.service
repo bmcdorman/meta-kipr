@@ -1,0 +1,9 @@
+[Unit]
+Description=Splash Screen
+After=local-fs.target
+
+[Service]
+ExecStart=/usr/sbin/fb-splash /dev/fb /etc/fb-splash/logo.raw565
+
+[Install]
+WantedBy=multi-user.target

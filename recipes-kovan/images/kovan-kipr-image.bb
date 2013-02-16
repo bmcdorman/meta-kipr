@@ -61,6 +61,10 @@ IMAGE_INSTALL += " \
 	libkovan \
 	libkovan-dev \
 	opencv-dev \
+	jikes \
+	jamvm \
+	classpath \
+	classpath-dev \
 	xinput-calibrator \
 	mplayer \
 	kernel-module-cs53l32a \

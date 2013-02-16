@@ -1,7 +1,7 @@
 DESCRIPTION = "Kovan FPGA"
 HOMEPAGE = "http://www.kipr.org/"
 LICENSE = "BSD"
-PR = "r12"
+PR = "r18"
 
 SRC_URI = "git://github.com/kipr/kovan-fpga.git \
            file://logo.raw565.gz \
