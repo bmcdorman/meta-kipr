@@ -4,7 +4,6 @@ SRC_URI = "git://github.com/kipr/botui.git \
            file://xorg.service \
            file://botui.service \
            file://platform.hints \
-           file://fix-serial.c \
            file://99-calibration.conf \
            file://target.h"
 
@@ -16,7 +15,7 @@ COMPATIBLE_MACHINE = "kovan"
 SRCREV = "HEAD"
 LICENSE = "GPLv3"
 LIC_FILES_CHKSUM = "file://${S}/LICENSE;md5=4fe869ee987a340198fb0d54c55c47f1"
-PR = "217"
+PR = "234"
 
 EXTRA_OECMAKE = "--no-warn-unused-cli"
 
@@ -36,7 +35,6 @@ do_install() {
 	install -m 0755 ${WORKDIR}/platform.hints ${D}/etc/kovan
 
 	install -d ${D}/kovan
-	install -m 0755 ${WORKDIR}/fix-serial.c ${D}/kovan/
 
 	# Target fixups
 	install -d ${D}/usr/include
