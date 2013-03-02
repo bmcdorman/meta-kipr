@@ -7,7 +7,7 @@ SRC_URI = "git://github.com/kipr/botui.git \
            file://99-calibration.conf \
            file://target.h"
 
-DEPENDS = "libkovan pcompiler easydevice libkar opencv"
+DEPENDS = "libkovan pcompiler libkar opencv"
 
 S = "${WORKDIR}/git"
 
