@@ -66,7 +66,6 @@ IMAGE_INSTALL += " \
 	classpath \
 	classpath-dev \
 	xinput-calibrator \
-	mplayer \
 	kernel-module-cs53l32a \
 	kernel-module-cx231xx-alsa \
 	kernel-module-cx231xx \
