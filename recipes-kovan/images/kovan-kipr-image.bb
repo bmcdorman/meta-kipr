@@ -138,6 +138,7 @@ IMAGE_INSTALL += " \
 	kernel-module-zc0301 \
 	kernel-module-zr364xx \
 	kernel-module-usbtest kernel-module-g-zero \
+	linkjvm \ 
 "
 export IMAGE_BASENAME = "kipr"
 
