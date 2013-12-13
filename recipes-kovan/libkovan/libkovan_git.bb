@@ -2,7 +2,7 @@ inherit cmake
 
 SRC_URI = "git://github.com/kipr/libkovan.git"
 
-DEPENDS = "opencv zbar i2c-wrapper openni"
+DEPENDS = "opencv zbar i2c-wrapper openni libav0.8"
 
 S = "${WORKDIR}/git"
 
@@ -10,7 +10,7 @@ COMPATIBLE_MACHINE = "kovan"
 SRCREV = "HEAD"
 LICENSE = "GPLv3"
 LIC_FILES_CHKSUM = "file://${S}/LICENSE;md5=4fe869ee987a340198fb0d54c55c47f1"
-PR = "205"
+PR = "243"
 
 EXTRA_OECMAKE = "--no-warn-unused-cli -DKOVAN=1 -DCMAKE_BUILD_TYPE=Debug"
 
