@@ -2,7 +2,7 @@ inherit cmake
 
 SRC_URI = "git://github.com/kipr/libkovan.git"
 
-DEPENDS = "opencv zbar i2c-wrapper libav0.8"
+DEPENDS = "opencv zbar i2c-wrapper openni libav0.8"
 
 S = "${WORKDIR}/git"
 
