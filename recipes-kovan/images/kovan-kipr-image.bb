@@ -61,10 +61,6 @@ IMAGE_INSTALL += " \
 	libkovan \
 	libkovan-dev \
 	opencv-dev \
-	jikes \
-	jamvm \
-	classpath \
-	classpath-dev \
 	xinput-calibrator \
 	kernel-module-cs53l32a \
 	kernel-module-cx231xx-alsa \
@@ -142,6 +138,7 @@ IMAGE_INSTALL += " \
 	kernel-module-zc0301 \
 	kernel-module-zr364xx \
 	kernel-module-usbtest kernel-module-g-zero \
+	linkjvm \ 
 "
 export IMAGE_BASENAME = "kipr"
 

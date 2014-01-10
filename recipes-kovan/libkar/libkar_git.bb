@@ -20,7 +20,7 @@ do_install() {
 	install -m 0755 ${S}/lib/libkar.so ${D}/usr/lib
 	
 	install -d ${D}/${includedir}
-	install -m 0755 ${S}/kar.hpp ${D}/${includedir}
+	install -m 0755 ${S}/include/kar.hpp ${D}/${includedir}
 }
 
 FILES_${PN} += "${libdir}/libkar.so"
