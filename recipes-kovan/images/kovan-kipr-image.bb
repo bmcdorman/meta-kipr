@@ -58,6 +58,7 @@ IMAGE_INSTALL += " \
         \
 	${XSERVER} \
 	botui \
+        openni \
 	libkovan \
 	libkovan-dev \
 	opencv-dev \

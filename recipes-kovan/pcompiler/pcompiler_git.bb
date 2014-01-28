@@ -1,15 +1,15 @@
 inherit qt4x11 cmake
 
-SRC_URI = "git://github.com/kipr/pcompiler.git"
-
+SRC_URI = "git://github.com/kipr/pcompiler.git;protocol=git;branch=use_Qt4"
+GIT_BRANCH="use_Qt4"
 DEPENDS = ""
 
 S = "${WORKDIR}/git"
 
-SRCREV = "HEAD"
+SRCREV = "5938c0d4868c012a30ccb9acf3980f115e8e0cc8"
 LICENSE = "GPL"
 LIC_FILES_CHKSUM = "file://${S}/LICENSE;md5=4fe869ee987a340198fb0d54c55c47f1"
-PR = "r7"
+PR = "r13"
 
 EXTRA_OECMAKE = "--no-warn-unused-cli"
 

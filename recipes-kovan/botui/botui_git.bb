@@ -4,8 +4,7 @@ SRC_URI = "git://github.com/kipr/botui.git \
            file://xorg.service \
            file://botui.service \
            file://platform.hints \
-           file://99-calibration.conf \
-           file://target.h"
+           file://99-calibration.conf"
 
 DEPENDS = "libkovan pcompiler libkar opencv"
 
@@ -15,7 +14,7 @@ COMPATIBLE_MACHINE = "kovan"
 SRCREV = "HEAD"
 LICENSE = "GPLv3"
 LIC_FILES_CHKSUM = "file://${S}/LICENSE;md5=4fe869ee987a340198fb0d54c55c47f1"
-PR = "246"
+PR = "293"
 
 EXTRA_OECMAKE = "--no-warn-unused-cli -DCMAKE_BUILD_TYPE=Debug"
 
@@ -35,10 +34,6 @@ do_install() {
 	install -m 0755 ${WORKDIR}/platform.hints ${D}/etc/kovan
 
 	install -d ${D}/kovan
-
-	# Target fixups
-	install -d ${D}/usr/include
-	install -m 0755 ${WORKDIR}/target.h ${D}/usr/include
 
 	install -d ${D}/usr/sbin
 	install -m 0755 ${S}/deploy/botui ${D}/usr/sbin/
