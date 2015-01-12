@@ -6,10 +6,10 @@ DEPENDS = ""
 
 S = "${WORKDIR}/git"
 
-SRCREV = "a9c45a395f1cf148450464daffabe75a6d999a6d"
+SRCREV = "c37b8e3abe1d85018b6614c6798334a765ffb4be"
 LICENSE = "GPL"
 LIC_FILES_CHKSUM = "file://${S}/LICENSE;md5=4fe869ee987a340198fb0d54c55c47f1"
-PR = "r11"
+PR = "r14"
 
 EXTRA_OECMAKE = "--no-warn-unused-cli"
 
@@ -22,7 +22,11 @@ do_install() {
 	install -d ${D}/${includedir}/kar
 	install -m 0755 ${S}/include/kar.hpp ${D}/${includedir}/kar
 	install -m 0755 ${S}/include/compat.hpp ${D}/${includedir}/kar
+
+	install -d ${D}/${bindir}
+	install -m 0775 ${S}/tools/kissarchive ${D}/${bindir}/
 }
 
 FILES_${PN} += "${libdir}/libkar.so"
+FILES_${PN} += "${bindir}/kissarchive"
 FILES_${PN} += "${includedir}/kar.hpp"
